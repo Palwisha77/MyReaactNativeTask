@@ -1,36 +1,36 @@
-import * as ActionTypes from '../constants/actionTypes';
-import reducer from './nodes';
-import initialState from './initialState';
+import * as ActionTypes from "../constants/actionTypes";
+import reducer from "./nodes";
+import initialState from "./initialState";
 
-describe('Reducers::Nodes', () => {
+describe("Reducers::Nodes", () => {
   const getInitialState = () => {
     return initialState().nodes;
   };
 
   const nodeA = {
-    url: 'http://localhost:3002',
+    url: "http://localhost:3002",
     online: false,
     name: null,
   };
 
   const nodeB = {
-    url: 'http://localhost:3003',
+    url: "http://localhost:3003",
     online: false,
     name: null,
   };
 
-  it('should set initial state by default', () => {
-    const action = {type: 'unknown'};
+  it("should set initial state by default", () => {
+    const action = { type: "unknown" };
     const expected = getInitialState();
 
     expect(reducer(undefined, action)).toEqual(expected);
   });
 
-  it('should handle CHECK_NODE_STATUS_START', () => {
+  it("should handle CHECK_NODE_STATUS_START", () => {
     const appState = {
       list: [nodeA, nodeB],
     };
-    const action = {type: ActionTypes.CHECK_NODE_STATUS_START, node: nodeA};
+    const action = { type: ActionTypes.CHECK_NODE_STATUS_START, node: nodeA };
     const expected = {
       list: [
         {
@@ -44,22 +44,24 @@ describe('Reducers::Nodes', () => {
     expect(reducer(appState, action)).toEqual(expected);
   });
 
-  it('should handle CHECK_NODE_STATUS_SUCCESS', () => {
+  it("should handle CHECK_NODE_STATUS_SUCCESS", () => {
     const appState = {
       list: [nodeA, nodeB],
     };
     const action = {
       type: ActionTypes.CHECK_NODE_STATUS_SUCCESS,
       node: nodeA,
-      res: {node_name: 'alpha'},
+      res: { node_name: "alpha" },
+      blockRes: { data: [] },
     };
     const expected = {
       list: [
         {
           ...nodeA,
           online: true,
-          name: 'alpha',
+          name: "alpha",
           loading: false,
+          blocks: [],
         },
         nodeB,
       ],
@@ -68,26 +70,28 @@ describe('Reducers::Nodes', () => {
     expect(reducer(appState, action)).toEqual(expected);
   });
 
-  it('should handle CHECK_NODE_STATUS_FAILURE', () => {
+  it("should handle CHECK_NODE_STATUS_FAILURE", () => {
     const appState = {
       list: [
         {
           ...nodeA,
           online: true,
-          name: 'alpha',
+          name: "alpha",
           loading: false,
+          blocks: [],
         },
         nodeB,
       ],
     };
-    const action = {type: ActionTypes.CHECK_NODE_STATUS_FAILURE, node: nodeA};
+    const action = { type: ActionTypes.CHECK_NODE_STATUS_FAILURE, node: nodeA };
     const expected = {
       list: [
         {
           ...nodeA,
           online: false,
-          name: 'alpha',
+          name: "alpha",
           loading: false,
+          blocks: [],
         },
         nodeB,
       ],

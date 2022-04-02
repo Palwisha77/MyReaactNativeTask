@@ -7,11 +7,12 @@ const checkNodeStatusStart = (node) => {
   };
 };
 
-const checkNodeStatusSuccess = (node, res) => {
+const checkNodeStatusSuccess = (node, res, blockRes) => {
   return {
     type: types.CHECK_NODE_STATUS_SUCCESS,
     node,
     res,
+    blockRes,
   };
 };
 
@@ -50,12 +51,13 @@ export function checkNodeStatus(node) {
       const res = await fetch(`${node.url}/api/v1/status`);
       const resp = await fetch(`${node.url}/api/v1/blocks`);
 
-      if (res.status >= 400) {
+      if (res.status >= 400 || resp.status >= 400) {
         dispatch(checkNodeStatusFailure(node));
       }
 
       const json = await res.json();
-      dispatch(checkNodeStatusSuccess(node, json));
+      const jsoBlocks = await resp.json();
+      dispatch(checkNodeStatusSuccess(node, json, jsoBlocks));
     } catch (err) {
       dispatch(checkNodeStatusFailure(node));
     }
