@@ -60,31 +60,91 @@ exports[`<Nodes /> should match snapshot 1`] = `
         }
       }
     >
-      <Text
+      <View
         style={
-          Array [
-            Object {},
-            Object {
-              "fontSize": 20,
-              "fontWeight": "500",
-              "letterSpacing": 0.15,
-              "lineHeight": 20,
-            },
-            Object {
-              "color": "rgba(0, 0, 0, 0.87)",
-              "marginBottom": 0,
-              "textAlign": "left",
-            },
-            Object {
-              "marginTop": 5,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingEnd": 30,
+            "width": "100%",
+          }
         }
-        text="Node 1"
-        type={6}
       >
-        Node 1
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {},
+              undefined,
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "marginBottom": 0,
+                "textAlign": "left",
+              },
+              Object {
+                "marginTop": 5,
+              },
+            ]
+          }
+          text="Node 1"
+          type={6}
+        >
+          Node 1
+        </Text>
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#D94238",
+                  "fontSize": 30,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Entypo",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {},
+                undefined,
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "marginBottom": 0,
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#8a9094",
+                  "fontSize": 12,
+                  "left": -7,
+                  "letterSpacing": 1,
+                },
+              ]
+            }
+            text="OFFLINE"
+            type={6}
+          >
+            OFFLINE
+          </Text>
+        </View>
+      </View>
       <Text
         style={
           Array [
@@ -114,7 +174,7 @@ exports[`<Nodes /> should match snapshot 1`] = `
         style={
           Array [
             Object {
-              "color": "#929aab",
+              "color": "#8a9094",
               "fontSize": 24,
             },
             Array [
@@ -124,7 +184,7 @@ exports[`<Nodes /> should match snapshot 1`] = `
               Object {
                 "position": "absolute",
                 "right": 10,
-                "top": 5,
+                "top": 20,
               },
             ],
             Object {
@@ -342,7 +402,7 @@ exports[`<Nodes /> should match snapshot 1`] = `
           }
         }
       >
-        
+        
       </Text>
     </View>
   </View>
@@ -380,31 +440,91 @@ exports[`<Nodes /> should match snapshot 1`] = `
         }
       }
     >
-      <Text
+      <View
         style={
-          Array [
-            Object {},
-            Object {
-              "fontSize": 20,
-              "fontWeight": "500",
-              "letterSpacing": 0.15,
-              "lineHeight": 20,
-            },
-            Object {
-              "color": "rgba(0, 0, 0, 0.87)",
-              "marginBottom": 0,
-              "textAlign": "left",
-            },
-            Object {
-              "marginTop": 5,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingEnd": 30,
+            "width": "100%",
+          }
         }
-        text="Node 2"
-        type={6}
       >
-        Node 2
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {},
+              undefined,
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "marginBottom": 0,
+                "textAlign": "left",
+              },
+              Object {
+                "marginTop": 5,
+              },
+            ]
+          }
+          text="Node 2"
+          type={6}
+        >
+          Node 2
+        </Text>
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#D94238",
+                  "fontSize": 30,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Entypo",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {},
+                undefined,
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "marginBottom": 0,
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#8a9094",
+                  "fontSize": 12,
+                  "left": -7,
+                  "letterSpacing": 1,
+                },
+              ]
+            }
+            text="OFFLINE"
+            type={6}
+          >
+            OFFLINE
+          </Text>
+        </View>
+      </View>
       <Text
         style={
           Array [
@@ -434,7 +554,7 @@ exports[`<Nodes /> should match snapshot 1`] = `
         style={
           Array [
             Object {
-              "color": "#929aab",
+              "color": "#8a9094",
               "fontSize": 24,
             },
             Array [
@@ -444,7 +564,7 @@ exports[`<Nodes /> should match snapshot 1`] = `
               Object {
                 "position": "absolute",
                 "right": 10,
-                "top": 5,
+                "top": 20,
               },
             ],
             Object {
@@ -662,7 +782,7 @@ exports[`<Nodes /> should match snapshot 1`] = `
           }
         }
       >
-        
+        
       </Text>
     </View>
   </View>

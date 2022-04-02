@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import colors from "../constants/colors";
 import { Paper, Subtitle, BodyText, Caption } from "material-bread";
 import { Expander } from "./Expander";
@@ -24,11 +24,7 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => (
         style={styles.secondaryHeading}
       />
       <Expander expanded={expanded} style={styles.icon(expanded)} />
-      {expanded && (
-        <View style={styles.heading}>
-          <Blocks blockList={node.blocks}/>
-        </View>
-      )}
+      {expanded && <Blocks blockList={node.blocks} />}
     </Paper>
   </TouchableOpacity>
 );
@@ -38,38 +34,39 @@ Node.propTypes = {
     url: PropTypes.string,
     online: PropTypes.bool,
     name: PropTypes.string,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
   }).isRequired,
   expanded: PropTypes.bool,
-  toggleNodeExpanded: PropTypes.func.isRequired
+  toggleNodeExpanded: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    marginVertical: 10,
-    marginHorizontal: 30
+    // padding: 10,
+    // marginVertical: 10,
+    // marginHorizontal: 30,
+    margin: 8,
+    padding: 8,
   },
   heading: {
     marginTop: 5,
-    color: colors.text
+    // color: colors.text,
   },
   headingContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingEnd: 30,
     alignItems: "center",
-    width: "100%"
+    width: "100%",
   },
   secondaryHeading: {
     marginTop: 5,
-    color: colors.faded
   },
-  icon: expanded => ({
+  icon: (expanded) => ({
     position: "absolute",
     top: expanded ? 10 : 20,
-    right: 10
-  })
+    right: 10,
+  }),
 });
 
 export default Node;

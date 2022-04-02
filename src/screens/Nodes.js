@@ -11,31 +11,31 @@ export class Nodes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expandedNodeURL: null
+      expandedNodeURL: null,
     };
     this.toggleNodeExpanded = this.toggleNodeExpanded.bind(this);
   }
 
   componentDidMount() {
     this.props.actions.checkNodeStatuses(this.props.nodes.list);
-    this.props.actions.checkNodeBlockes(this.props.nodes.list);
+    //this.props.actions.checkNodeBlockes(this.props.nodes.list);
   }
 
   toggleNodeExpanded(node) {
     this.setState({
-      expandedNodeURL: node.url === this.state.expandedNodeURL ? null : node.url
+      expandedNodeURL:
+        node.url === this.state.expandedNodeURL ? null : node.url,
     });
   }
-    
+
   render() {
     const { nodes } = this.props;
-    console.log('Nodesss ', nodes);
     return (
       <View>
         <Heading style={styles.heading} type={4}>
           Nodes
         </Heading>
-        {nodes.list.map(node => (
+        {nodes.list.map((node) => (
           <Node
             node={node}
             key={node.url}
@@ -50,21 +50,21 @@ export class Nodes extends React.Component {
 
 Nodes.propTypes = {
   actions: PropTypes.object.isRequired,
-  nodes: PropTypes.object.isRequired
+  nodes: PropTypes.object.isRequired,
 };
 const styles = StyleSheet.create({
-  heading: { marginLeft: 30, marginTop: 45, fontWeight: "700" }
+  heading: { marginLeft: 8, marginTop: 35 },
 });
 
 function mapStateToProps(state) {
   return {
-    nodes: state.nodes
+    nodes: state.nodes,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(actions, dispatch),
   };
 }
 
